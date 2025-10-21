@@ -18,6 +18,13 @@ This is the backend for a real-time chat application, built using **Node.js**, *
 
 ---
 
+## ⚙️ Details
+
+<details>
+
+
+
+
 ## 🛠️ Tech Stack
 
 | Technology   | Usage |
@@ -97,6 +104,8 @@ For ImageKit:
 |--------|--------|----------|
 | `text` | string | ✅       |
 | `image`| file   | ✅       |
+
+</details>
 
 
 

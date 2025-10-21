@@ -20,7 +20,7 @@ This is the backend for a real-time chat application, built using **Node.js**, *
 
 
 <details>
-##<summary> Click to expand Project Details </summary>
+<summary> Click to expand Project Details </summary>
 
 
 
@@ -130,7 +130,7 @@ It handles user authentication, owner management, book/car listing, bookings, an
 ---
 
 <details>
-  ##<summary>Click to expand Project Details</summary>
+  <summary>Click to expand Project Details</summary>
 
 
 
@@ -210,14 +210,7 @@ For ImageKit:
 | GET    | `/owner` | ✅ | List all bookings for logged-in owner |
 | POST   | `/change-status` | ✅ | Change booking status (pending, confirmed, completed) |
 
-**Example: Create Booking (`application/json`)**
 
-```json
-{
-  "book": "BOOK_ID",
-  "pickupDate": "YYYY-MM-DD",
-  "returnDate": "YYYY-MM-DD"
-}
 
 
 </details>

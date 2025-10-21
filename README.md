@@ -48,41 +48,55 @@ For ImageKit:
 
 ---
 
-🔌 Socket.io Events
-Event	Direction	Description
-connection	Client → Server	Connects user to socket with userId
-getOnlineUsers	Server → Client	Sends current list of online users
-newMessage	Server → Client	Emits new message to receiver
-disconnect	Client → Server	Removes user from online map
-📍 API Endpoints
+## 🔌 Socket.io Events
 
-All protected routes require: Authorization: Bearer <token>
+| Event           | Direction        | Description                              |
+|-----------------|----------------|------------------------------------------|
+| `connection`    | Client → Server | Connects user to socket with userId      |
+| `getOnlineUsers`| Server → Client | Sends current list of online users       |
+| `newMessage`    | Server → Client | Emits new message to receiver            |
+| `disconnect`    | Client → Server | Removes user from online map             |
 
-👤 User Routes (/api/user)
-Method	Endpoint	Auth	Description
-POST	/register	❌	Register a new user
-POST	/login	❌	Login and get JWT token
-GET	/check	✅	Verify token & get user info
-PUT	/updateProfile	✅	Update user profile (name, bio, image)
+---
 
-Example: Update Profile (multipart/form-data)
+## 📍 API Endpoints
 
-Field	Type	Optional
-name	string	✅
-bio	string	✅
-image	file	✅
-💬 Message Routes (/api/messages)
-Method	Endpoint	Auth	Description
-GET	/users	✅	Get all users except logged-in one, with unseen message count
-GET	/:id	✅	Get all messages with a specific user
-PUT	/mark/:id	✅	Mark a specific message as seen
-POST	/send/:id	✅	Send a message (text/image) to a user
+> All protected routes require: `Authorization: Bearer <token>`
 
-Example: Send Message (multipart/form-data)
+### 👤 User Routes (`/api/user`)
 
-Field	Type	Optional
-text	string	✅
-image	file	✅
+| Method | Endpoint         | Auth | Description                       |
+|--------|-----------------|------|-----------------------------------|
+| POST   | `/register`      | ❌   | Register a new user               |
+| POST   | `/login`         | ❌   | Login and get JWT token           |
+| GET    | `/check`         | ✅   | Verify token & get user info      |
+| PUT    | `/updateProfile` | ✅   | Update user profile (name, bio, image) |
+
+**Example: Update Profile (`multipart/form-data`)**
+
+| Field | Type   | Optional |
+|-------|--------|----------|
+| `name`| string | ✅       |
+| `bio` | string | ✅       |
+| `image`| file  | ✅       |
+
+---
+
+### 💬 Message Routes (`/api/messages`)
+
+| Method | Endpoint      | Auth | Description                                         |
+|--------|---------------|------|---------------------------------------------------|
+| GET    | `/users`       | ✅   | Get all users except logged-in one, with unseen messages count |
+| GET    | `/:id`         | ✅   | Get all messages with a specific user            |
+| PUT    | `/mark/:id`    | ✅   | Mark a specific message as seen                  |
+| POST   | `/send/:id`    | ✅   | Send a message (text/image) to a user           |
+
+**Example: Send Message (`multipart/form-data`)**
+
+| Field  | Type   | Optional |
+|--------|--------|----------|
+| `text` | string | ✅       |
+| `image`| file   | ✅       |
 
 
 
